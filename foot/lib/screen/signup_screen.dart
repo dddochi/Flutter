@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:foot/component/text_and_textfield.dart';
 
 import '../component/big_logo.dart';
 import '../component/bottom_button.dart';
+import '../component/text_and_textfield.dart';
 import '../const/colors.dart';
 
-class LogInScreen extends StatelessWidget {
-  const LogInScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,9 @@ class LogInScreen extends StatelessWidget {
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.0,),
+            padding: EdgeInsets.symmetric(
+              horizontal: 30.0,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -47,8 +49,7 @@ class _Input extends StatelessWidget {
         children: [
           Text(
             'Log In',
-            style:
-            TextStyle(
+            style: TextStyle(
               color: Colors.black,
               fontSize: 25.0,
               fontWeight: FontWeight.w700,
@@ -57,11 +58,24 @@ class _Input extends StatelessWidget {
           SizedBox(
             height: 30.0,
           ),
-          TextAndTextField(textString: 'Email', isObsecureTextTrue: false),
+          TextAndTextField(
+            textString: 'Email',
+            isObsecureTextTrue: false,
+          ),
           SizedBox(
             height: 30.0,
           ),
-          TextAndTextField(textString: 'Password', isObsecureTextTrue: true),
+          TextAndTextField(
+            textString: 'Password',
+            isObsecureTextTrue: true,
+          ),
+          SizedBox(
+            height: 30.0,
+          ),
+          TextAndTextField(
+            textString: 'User Name',
+            isObsecureTextTrue: false,
+          ),
         ],
       ),
     );

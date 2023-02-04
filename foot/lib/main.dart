@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foot/screen/login_screen.dart';
+import 'package:foot/screen/signup_screen.dart';
 import 'package:foot/screen/splash_screen.dart';
 
 void main() {
@@ -16,6 +17,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LogInScreen();
+    return SignUpScreen();
   }
 }
