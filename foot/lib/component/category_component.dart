@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../screen/post_screen.dart';
 
-class CategoryComponent extends StatelessWidget {
+class CategoryComponent extends StatefulWidget {
   final String imageUrl;
   final String title;
   final String date;
@@ -16,17 +16,27 @@ class CategoryComponent extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<CategoryComponent> createState() => _CategoryComponentState();
+}
+
+class _CategoryComponentState extends State<CategoryComponent> {
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.fromLTRB(20.0, 0, 0, 30.0),
       child: GestureDetector(
-        onTap: (){
-          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>PostScreen()));
+        onTap: () {
+          /*
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (BuildContext context) => PostScreen(),
+            settings: RouteSettings(arguments: title),
+          ));
+           */
         },
         child: Row(
           children: [
             Image.network(
-              imageUrl,
+              widget.imageUrl,
               fit: BoxFit.fill,
               width: 130.0,
               height: 85.0,
@@ -39,7 +49,7 @@ class CategoryComponent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    widget.title,
                     style: TextStyle(
                       fontSize: 17.0,
                       fontWeight: FontWeight.w500,
@@ -49,14 +59,14 @@ class CategoryComponent extends StatelessWidget {
                     height: 4.0,
                   ),
                   Text(
-                    date,
+                    widget.date,
                     style: TextStyle(
                       fontSize: 13.0,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                   Text(
-                    introductionComment,
+                    widget.introductionComment,
                     style: TextStyle(
                       fontSize: 15.0,
                       fontWeight: FontWeight.w400,

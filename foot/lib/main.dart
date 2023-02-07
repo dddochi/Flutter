@@ -4,21 +4,13 @@ import 'package:foot/screen/mypage_category_screen.dart';
 import 'package:foot/screen/mypage_map_screen.dart';
 import 'package:foot/screen/signup_screen.dart';
 import 'package:foot/screen/splash_screen.dart';
+import 'package:foot/screen/world_screen.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: WorldScreen(),
     ),
   );
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MyPageCategoryScreen();
-  }
 }

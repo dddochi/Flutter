@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../component/my_profile.dart';
+import '../component/custom_google_map.dart';
+import '../component/mode_icon.dart';
+import '../component/profile.dart';
 import '../component/search_bar.dart';
 
 class MyPageMapScreen extends StatefulWidget {
@@ -12,32 +14,39 @@ class MyPageMapScreen extends StatefulWidget {
 }
 
 class _MyPageMapScreenState extends State<MyPageMapScreen> {
-  static final LatLng companyLatLng = LatLng(
+  static final LatLng worldLatLng = LatLng(
     37.5233273,
     126.921252,
   );
   static final CameraPosition initialPosition = CameraPosition(
-    target: companyLatLng,
+    target: worldLatLng,
     zoom: 15,
   );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: Column(
+        child:
+        Stack(
           children: [
-            MyProfile(
-              profileImage: 'asset/img/basic_profile.png',
-              modeIcon: Icons.join_left_rounded,
+            Column(
+              children: [
+                MyProfile(
+                  profileImage: 'asset/img/basic_profile.png',
+                ),
+                SearchBar(),
+                Expanded(
+                  flex: 5,
+                  child: CustomGoogleMap(latLng: worldLatLng, initialPosition: initialPosition,),
+                ),
+              ],
             ),
-            SearchBar(),
-            Expanded(
-              flex: 5,
-              child: GoogleMap(
-                initialCameraPosition: initialPosition,
-                mapType: MapType.normal,
-              ),
+            Positioned(
+              top: 60,
+              right: 5,
+              child: ModeIcon(modeIcon: Icons.join_left_rounded),
             ),
           ],
         ),

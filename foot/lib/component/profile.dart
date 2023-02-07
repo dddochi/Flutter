@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:foot/screen/mypage_category_screen.dart';
 
 import '../screen/mypage_map_screen.dart';
+import '../screen/world_screen.dart';
 
 class MyProfile extends StatefulWidget {
   final String profileImage;
-  IconData modeIcon; //join_left_rounded or join_right_rounded
+//join_left_rounded or join_right_rounded
   MyProfile({
     required this.profileImage,
-    required this.modeIcon,
     Key? key,
   }) : super(key: key);
 
@@ -59,33 +59,6 @@ class MyProfileState extends State<MyProfile> {
                     )),
               ],
             ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'Mode',
-                style: TextStyle(
-                  fontSize: 13.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  if(widget.modeIcon == Icons.join_left_rounded){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>MyPageCategoryScreen()));
-                  }
-                  if(widget.modeIcon == Icons.join_right_rounded){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>MyPageMapScreen()));
-                  }
-                },
-                iconSize: 30.0,
-                icon: Icon(widget.modeIcon),
-              ),
-              SizedBox(
-                height: 25.0,
-              ),
-            ],
           ),
         ],
       ),
