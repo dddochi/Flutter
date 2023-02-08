@@ -28,7 +28,9 @@ class SignUpScreen extends StatelessWidget {
                 //Password - ()
                 BigLogo(),
                 _Input(),
-                BottomButton(),
+                BottomButton(
+                  buttonName: 'SIGNUP',
+                ),
               ],
             ),
           ),
