@@ -44,4 +44,3 @@ app.*.map.json
 /android/app/release
 
 ## ignore specific file
-git rm --cached lib/const/agora.dart
