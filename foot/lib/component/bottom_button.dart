@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../screen/world_screen.dart';
+import '../screen/world_map_screen.dart';
 
 class BottomButton extends StatelessWidget {
   final String buttonName;
+  final VoidCallback onPressed;
   const BottomButton({
     required this.buttonName,
+    required this.onPressed,
     Key? key,
   }) : super(key: key);
 
@@ -14,11 +16,7 @@ class BottomButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 40.0),
       child: ElevatedButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext context) => WorldScreen()),
-          );
-        },
+        onPressed: onPressed,
         child: Text(buttonName),
       ),
     );

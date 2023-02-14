@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foot/component/text_and_textfield.dart';
+import 'package:foot/screen/world_map_screen.dart';
 
 import '../component/big_logo.dart';
 import '../component/bottom_button.dart';
@@ -26,7 +27,11 @@ class LogInScreen extends StatelessWidget {
                 //Password - ()
                 BigLogo(),
                 _Input(),
-                BottomButton(buttonName: 'LOGIN',),
+                BottomButton(buttonName: 'LOGIN',onPressed:() {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (BuildContext context) => WorldMapScreen()),
+                  );
+                },),
               ],
             ),
           ),

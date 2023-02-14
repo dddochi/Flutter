@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foot/screen/mypage_category_screen.dart';
 
 import '../screen/mypage_map_screen.dart';
-import '../screen/world_screen.dart';
+import '../screen/world_map_screen.dart';
 
 class MyProfile extends StatefulWidget {
   final String profileImage;

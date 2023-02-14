@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foot/screen/world_map_screen.dart';
 
 import '../component/big_logo.dart';
 import '../component/bottom_button.dart';
@@ -30,6 +31,11 @@ class SignUpScreen extends StatelessWidget {
                 _Input(),
                 BottomButton(
                   buttonName: 'SIGNUP',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (BuildContext context) => WorldMapScreen()),
+                    );
+                  },
                 ),
               ],
             ),

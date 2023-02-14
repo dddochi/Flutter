@@ -4,12 +4,12 @@ import '../screen/post_screen.dart';
 
 class CategoryComponent extends StatefulWidget {
   final String imageUrl;
-  final String title;
+  final String categoryTitle;
   final String date;
   final String introductionComment;
   const CategoryComponent({
     required this.imageUrl,
-    required this.title,
+    required this.categoryTitle,
     required this.date,
     required this.introductionComment,
     Key? key,
@@ -49,7 +49,7 @@ class _CategoryComponentState extends State<CategoryComponent> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.title,
+                    widget.categoryTitle,
                     style: TextStyle(
                       fontSize: 17.0,
                       fontWeight: FontWeight.w500,
